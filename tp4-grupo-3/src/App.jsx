@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Contador from '/contador'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -30,6 +31,14 @@ function App() {
       </p>
     </>
   )
+}
+function App() {
+  return (
+    <div>
+      <h1>Hola React + Vite</h1>
+      <Contador />
+    </div>
+  );
 }
 
 export default App
