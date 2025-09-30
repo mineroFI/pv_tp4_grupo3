@@ -1,7 +1,7 @@
 import React from "react";
 import { juegoAdivinarNumero } from "./javascript/juegoAdivinar";
 import Mensaje from "./Mensaje";
-import Intentos from "./intentos";
+import Intentos from "./Intentos";
 import IngresarNumero from "./IngresarNumero";
 import Controles from "./Controles";
 
