@@ -1,6 +1,6 @@
-import './styles/estiloAdivinarNumero.css';
+import "../styles/estiloAdivinarNumero.css";
 import React from "react";
-import Juego from "./componentes/Juego";
+import Juego from "./juego";
 
 
 export default function App() {

@@ -1,4 +1,4 @@
-/* Estilos generales del juego */
+/* 
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -7,13 +7,13 @@ body {
   padding: 0;
 }
 
-/* Título principal */
+
 h1 {
   color: #2c3e50;
   margin: 30px 0 20px;
 }
 
-/* Contenedor del juego */
+
 .juego-container {
   background-color: #fff;
   max-width: 400px;
@@ -23,7 +23,7 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Input y botones */
+
 input[type="number"] {
   width: 80px;
   padding: 5px;
@@ -52,7 +52,19 @@ button:disabled {
 }
 
 /* Mensajes */
-p {
+/* p {
   font-size: 18px;
   margin: 10px 0;
+} */
+
+
+ /* comentado por que genera conflicto con otros estilos del proyecto */
+
+.juego-container {
+  border: 1px solid #330303;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  background: #622888;
+  border-radius: 8px;
 }
