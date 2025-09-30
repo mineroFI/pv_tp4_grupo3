@@ -1,53 +1,52 @@
-import { useState } from 'react';
-import '/src/styles/estilosBotones.css'
+
+import { useJuegoDeClicks } from './useJuegoDeClicks';
+import '/src/styles/estilosBotones.css';
 
 function EjercicioBotones() {
-    const colores = ['#FF0000', '#0000FF', '#00FF00',
-        '#FFFF00', '#00FFFF', '#FF00FF', '#800000',
-        '#008000', '#000080', '#808000', '#800080',
-        '#008080', '#808080', '#C0C0C0', '#FFFFFF', '#000000'];
-
-    const [colorBotones, setColorBotones] = useState(colores.slice(0, 4));
-
-    const [resultado, setResultado] = useState('Presione un boton para empezar');
-
-    const manejarClickEnElBoton = () => {
-        const nuevosColores = colorBotones.map(() => {
-            const inideAleatorio = Math.floor(Math.random() * colores.length);
-            return colores[inideAleatorio];
-        });
-
-        const conteo = nuevosColores.reduce((acc, color) => {
-            acc[color] = (acc[color] || 0) + 1;
-            return acc;
-        }, {});
-
-        const haGanado = Object.values(conteo).some(count => count >= 3);
-
-        if (haGanado) {
-            setResultado('¡GANASTE! 🎉 Tres o más colores coinciden.');
-        } else {
-            setResultado('Sigue intentando... 😅');
-        }
-
-        setColorBotones(nuevosColores);
-    };
+    const {
+        colorBotones,
+        resultado,
+        tiempoRestante,
+        juegoActivo,
+        clicsExitosos,
+        TIEMPO_LIMITE,
+        iniciarJuego,
+        manejarClickEnElBoton,
+    } = useJuegoDeClicks();
 
     return (
         <>
             <div className="contenedor-juego">
-                <h1 className="titulo"> Juego de Colores </h1>
-                <p> Presione cualquier boton para cambiar los colores. Si tres o mas coinciden, gana.</p>
+                <h1 className="titulo"> Desafío de Velocidad de Clic </h1>
+                <p> Tienes {TIEMPO_LIMITE} segundos para presionar un botón. Si lo logras, el tiempo se reinicia.</p>
+
+                <h2>Clicks Exitosos: {clicsExitosos}</h2>
+
+                {juegoActivo && (
+                    <h2 style={{ color: tiempoRestante <= 1 ? 'red' : 'inherit' }}>
+                        Tiempo Restante: {tiempoRestante}s
+                    </h2>
+                )}
+
                 <p className="mensaje-resultado">{resultado}</p>
+
+                {/* Botón de Inicio/Reinicio */}
+                {!juegoActivo && (
+                    <button onClick={iniciarJuego} className="boton-inicio">
+                        {clicsExitosos > 0 ? 'Reiniciar Juego' : 'Iniciar Juego'}
+                    </button>
+                )}
+
                 <div className="contenedor-botones">
                     {colorBotones.map((c, i) => (
                         <button
                             key={i}
+                            disabled={!juegoActivo}
                             onClick={manejarClickEnElBoton}
                             style={{ backgroundColor: c }}
-                             className="boton-color"
+                            className="boton-color"
                         >
-                            Boton {i + 2}
+                            Boton {i + 1}
                         </button>
                     ))}
                 </div>
