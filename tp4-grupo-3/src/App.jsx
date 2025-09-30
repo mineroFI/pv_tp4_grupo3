@@ -1,7 +1,3 @@
-import './styles/App.css'
-import { Saludo } from './assets/components/saludo.jsx'
-import EjercicioBotones from './assets/components/ejercicioBotones.jsx'
-import AppPunto3 from './componentesPunto3/App.jsx'
 
 
 function App() {
@@ -22,6 +18,14 @@ function App() {
       <AppPunto3 />
   </>
   )
+}
+function App() {
+  return (
+    <div>
+      <h1>Hola React + Vite</h1>
+      <Contador />
+    </div>
+  );
 }
 
 export default App
