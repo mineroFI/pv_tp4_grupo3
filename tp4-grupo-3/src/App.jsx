@@ -23,13 +23,5 @@ function App() {
     </>
   )
 }
-function App() {
-  return (
-    <div>
-      <h1>Hola React + Vite</h1>
-      <Contador />
-    </div>
-  );
-}
 
 export default App
