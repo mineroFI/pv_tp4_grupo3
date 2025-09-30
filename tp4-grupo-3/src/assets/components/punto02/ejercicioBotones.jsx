@@ -1,5 +1,5 @@
 
-import { useJuegoDeClicks } from './useJuegoDeClicks'; 
+import { useJuegoDeClicks } from './useJuegoDeClicks';
 import '/src/styles/estilosBotones.css';
 
 function EjercicioBotones() {

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-const TIEMPO_LIMITE = 10;
+const TIEMPO_LIMITE = 9;
 const COLORES_BASE = ['#FF0000', '#0000FF', '#00FF00',
     '#FFFF00', '#00FFFF', '#FF00FF', '#800000',
     '#008000', '#000080', '#808000', '#800080',
