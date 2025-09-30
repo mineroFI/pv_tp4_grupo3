@@ -1,7 +1,7 @@
 import './styles/App.css'
-import { Saludo } from './assets/components/saludo.jsx'
-import EjercicioBotones from './assets/components/ejercicioBotones.jsx'
-import AppPunto3 from './componentesPunto3/App.jsx'
+import { Saludo } from '../src/assets/components/punto01/saludo.jsx'
+import EjercicioBotones from './assets/components/punto02/ejercicioBotones.jsx'
+import AppPunto3 from './assets/components/punto03/App.jsx'
 
 
 function App() {
@@ -10,17 +10,17 @@ function App() {
 
   return (
     <>
-    <div>
-      <Saludo aN={aN} aA={aA} />
-      <div className="gif-container">
-        <img src="/image/Helpy.gif" alt="Helpy" className="img-responsive"/>
+      <div>
+        < Saludo aN={aN} aA={aA} />
+        <div className="gif-container">
+          <img src="/image/Helpy.gif" alt="Helpy" className="img-responsive" />
+        </div>
       </div>
-    </div>
 
 
       < EjercicioBotones />;
       <AppPunto3 />
-  </>
+    </>
   )
 }
 

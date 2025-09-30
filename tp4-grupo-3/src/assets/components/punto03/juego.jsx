@@ -1,12 +1,12 @@
 import React from "react";
-import { juegoAdivinarNumero } from "./javascript/juegoAdivinar";
+import { juegoAdivinarNumero } from "./juegoAdivinar";
 import Mensaje from "./Mensaje";
 import Intentos from "./Intentos";
 import IngresarNumero from "./IngresarNumero";
 import Controles from "./Controles";
 
 export default function Juego() {
-  
+
   const {
     numeroIngresado,
     setNumeroIngresado,
@@ -19,7 +19,7 @@ export default function Juego() {
   } = juegoAdivinarNumero();
 
   return (
-    
+
     <div className="juego-container">
       <h3>Componente Juego funcionando</h3>
       <Mensaje mensaje={mensaje} />

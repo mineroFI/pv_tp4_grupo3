@@ -1,4 +1,4 @@
-import "../styles/estiloAdivinarNumero.css";
+import '../../../styles/estiloAdivinarNumero.css';
 import React from "react";
 import Juego from "./juego";
 
